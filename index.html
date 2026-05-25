@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>106-115 學測自然科物理題庫</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__eyebrow">106-115 學年度學測自然科</div>
+    <div class="hero__layout">
+      <div class="hero__copy">
+        <h1>學測物理自學題庫</h1>
+        <p class="hero__subtitle">依 108 課綱高中物理單元分類，保留官方題目截圖，整合練習、答案、詳解與相似題。</p>
+      </div>
+      <div class="hero__panel" aria-label="題庫統計">
+        <div><strong>226</strong><span>題物理題</span></div>
+        <div><strong>10</strong><span>個學年度</span></div>
+        <div><strong>6</strong><span>個課綱單元</span></div>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="頁面導覽">
+      <a href="#overview" data-page-link="overview">總覽</a>
+      <a href="#curriculum" data-page-link="curriculum">課綱單元</a>
+      <a href="#practice" data-page-link="practice">開始練題</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview" class="page-section panel dashboard" data-page="overview" aria-label="首頁統計">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">統計總覽</p>
+          <h2>歷年單元出題分布</h2>
+        </div>
+        <p class="muted">先看常考單元，再點數字或概念直接開始練題。</p>
+      </div>
+      <div class="dashboard-grid">
+        <div class="dashboard-card dashboard-card--wide">
+          <h3>106-115 各單元題數</h3>
+          <div id="unitYearHeatmap" class="heatmap"></div>
+        </div>
+        <div class="dashboard-card">
+          <h3>高頻概念</h3>
+          <div id="topConcepts" class="concept-cloud"></div>
+        </div>
+      </div>
+      <div class="learning-path">
+        <article>
+          <span>1</span>
+          <h3>先判斷常考單元</h3>
+          <p>用年度 x 單元矩陣找高頻題型，建立複習優先序。</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>讀課綱重點</h3>
+          <p>每個單元先看學測常見考法、學習目標與易錯點。</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>練題與訂正</h3>
+          <p>題目只看官方截圖，作答後再展開詳解與相似題。</p>
+        </article>
+      </div>
+      <div class="page-actions">
+        <button type="button" data-route-target="practice">直接開始練題</button>
+        <button type="button" data-route-target="curriculum">先看課綱單元</button>
+      </div>
+    </section>
+
+    <section id="curriculum" class="page-section panel unit-guide-section" data-page="curriculum" aria-label="108課綱物理單元導讀">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">108 課綱</p>
+          <h2>單元導讀與練習入口</h2>
+        </div>
+        <p class="muted">每個單元整理學測常見考法、學習目標、易錯點，並連到對應題目。</p>
+      </div>
+      <div id="unitGuides" class="unit-guide-grid"></div>
+    </section>
+
+    <section id="practice" class="page-section practice-page" data-page="practice" aria-label="練題區">
+      <div id="questionBank" class="panel controls" aria-label="篩選工具">
+        <label class="search">
+          <span>搜尋題號、單元或概念</span>
+          <input id="searchInput" type="search" list="conceptSuggestions" placeholder="例：動量、庫侖力、黑體輻射、都卜勒、115-13">
+          <datalist id="conceptSuggestions"></datalist>
+        </label>
+        <div>
+          <h2>單元</h2>
+          <div id="unitFilters" class="filter-row"></div>
+        </div>
+        <div>
+          <h2>學年度</h2>
+          <div id="yearFilters" class="filter-row filter-row--compact"></div>
+        </div>
+      </div>
+
+      <section class="result-head">
+        <div>
+          <p id="resultCount"></p>
+          <p class="muted">題組題會保留共用題幹；每題下方可作答，答案與詳解預設收合。</p>
+        </div>
+        <button id="clearFilters" type="button">清除篩選</button>
+      </section>
+
+      <section id="questionGrid" class="question-grid" aria-live="polite"></section>
+      <nav id="paginationControls" class="pagination" aria-label="題目分頁"></nav>
+    </section>
+  </main>
+
+  <footer>
+    <p>分類軸：運動與力、能量與熱、波動／聲音／光、電與磁、近代物理與量子、科學探究與量測。</p>
+    <p>來源：大考中心歷年學測自然科試題 PDF。產生時間：2026-05-25T15:43:02.779Z</p>
+  </footer>
+
+  <script src="questions-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
